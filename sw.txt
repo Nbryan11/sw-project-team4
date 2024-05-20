@@ -1,0 +1,3 @@
+Estoy aprendiendo git para el control de versiones
+Estoy entendiendo Git en la asignatura
+“Este texto se agregó desde la rama Development”
