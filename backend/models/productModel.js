@@ -7,7 +7,9 @@ const productSchema = mongoose.Schema({
     productImage: [],
     description: String,
     price: Number,
-    sellingPrice: Number
+    sellingPrice: Number,
+    licenseIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'License' }] // Array de ObjectId que referencia a License
+
 },{
     timestamps : true
 })

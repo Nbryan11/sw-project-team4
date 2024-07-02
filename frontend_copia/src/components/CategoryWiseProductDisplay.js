@@ -5,6 +5,7 @@ import addToCart from '../helpers/addToCart'
 import { Link, useLocation  } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 import Context from '../context';
+import scrollTop from '../helpers/scrollTop';
 
 //pasamos category como parametros a donde se llame la funcion <HorizontalCardProduct/>
 const CategoryWiseProductDisplay = ({ category, heading }) => {
@@ -66,7 +67,8 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
                 ):(
                     data.map((product, index) => {
                         return (
-                            <Link key={product._id}  to={`/product/${product._id}`}   className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex'>
+                            //para enviar arriba de la pagina es con }
+                            <Link key={product._id}  to={`/product/${product._id}`} onClick={scrollTop}   className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex'>
                                 <div className='bg-white h-full p-4 min-w-[120px] md:min-w-[145px] flex justify-center items-center'>
                                     <img src={product.productImage[0]}  className='object-scale-down h-full hover:scale-110 transition-all' />
                                 </div>

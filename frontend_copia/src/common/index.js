@@ -93,7 +93,54 @@ const SummaryApi = {
     getHistoryShopping: {
         url: `${backendDomain}/api/shopping-history`,
         method: "get"
-    }
+    },
+    searchProduct: {
+        url: `${backendDomain}/api/search`,
+        method: "get"
+    },
+    reportMonthly: {
+        url: `${backendDomain}/api/sales-report/monthly`,
+        method: "get"
+    },
+    reportProducts: {
+        url: `${backendDomain}/api/sales-report/products`,
+        method: "get"
+    },
+    mantenimientoPreventivo:{
+        url: `${backendDomain}/api/mantenimiento-preventivo`,
+        method: 'post'
+    },
+    tareasTecnico: {
+        url: `${backendDomain}/api/tareas-tecnico`,
+        method: 'get'
+    },
+    deleteUser: {
+        url: `${backendDomain}/api/delete-user`,
+        method: 'delete'
+    },
+    allSupport: {
+        url: `${backendDomain}/api/get-support`,
+        method: 'get'
+    },
+
+    uploadComputer: {
+        url: `${backendDomain}/api/upload-computer`,
+        method: 'post' 
+    },
+    getComputer: {
+        url: `${backendDomain}/api/get-computer`,
+        method: 'get'
+    },
+    actualizarTarea: {
+        url: `${backendDomain}/api/actualizarTarea`, // La URL base sin el parámetro `:id`
+        method: 'put'
+    },
+     tareasCorrectivo: {
+        url: `${backendDomain}/api/tareas-correctivo`,
+        method: 'get'
+     }
+
+
 
 
 

@@ -180,6 +180,7 @@
           }
         </div>
         {
+          //forma de pasar informacion a otra pagina
           data.category && (
             <CategoryWiseProductDisplay category={data?.category} heading={"recommended"} />
 

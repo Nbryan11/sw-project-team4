@@ -53,6 +53,8 @@ const HistoryShopping = () => {
                                         <p className="text-gray-600">Price: ${product.productId.price}</p>
                                         <p className="text-gray-600">Selling Price: ${product.sellingPrice}</p>
                                         <p className="text-gray-600">Quantity: {product.quantity}</p>
+                                        <p className="text-gray-600">License Key: {product.licenseKey}</p>
+
                                     </div>
                                 </li>
                             ))}

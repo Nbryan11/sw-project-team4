@@ -40,15 +40,15 @@ const Login = () => {
             body : JSON.stringify(data)
         })
 
-        const dataApi = await dataResponse.json()
+            const dataApi = await dataResponse.json()
 
-        if(dataApi.success){
-            toast.success(dataApi.message)
-            navigate('/')
-            fetchUserDetails()
-            fetchUserAddToCart()
+            if(dataApi.success){
+                toast.success(dataApi.message)
+                navigate('/')
+                fetchUserDetails()
+                fetchUserAddToCart()
 
-        }
+            }
         
     }
 
