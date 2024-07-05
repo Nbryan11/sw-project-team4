@@ -138,7 +138,11 @@ const SummaryApi = {
      tareasCorrectivo: {
         url: `${backendDomain}/api/tareas-correctivo`,
         method: 'get'
-     }
+     },
+     filterProduct : {
+        url : `${backendDomain}/api/filter-product`,
+        method : 'post'
+    }
 
 
 

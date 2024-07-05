@@ -36,6 +36,7 @@ const getComputer = require('../controller/user/getComputer')
 const { actualizarTarea } = require('../controller/user/actualizarTarea')
 const { createMantenimientoCorrectivo } = require('../controller/user/mantenimientoCorrectivo')
 const getMantenimientoCorrectivo = require('../controller/user/getMantenimientoCorrectivo')
+const filterProductController = require('../controller/product/filterProduct')
 
 //demo
 router.get("/demo", demoController)
@@ -126,6 +127,8 @@ router.get("/countAddToCartProduct", authToken, countAddToCartProduct)
 router.get("/view-card-product", authToken, addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
+router.post("/filter-product",filterProductController)
+
 
 //mantenimientos
 router.post("/mantenimiento-preventivo", authToken, createMantenimiento)
