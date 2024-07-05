@@ -36,6 +36,12 @@ const ClientPanel = () => {
                         <Link to={"information"} className='px-2 py-1 hover:bg-slate-100'>user information</Link>
                         <Link to={"all-products"} className='px-2 py-1 hover:bg-slate-100'>update password</Link>
                         <Link to={"all-products"} className='px-2 py-1 hover:bg-slate-100'>wish list</Link>
+                        <Link to={"delete-user"} className='px-2 py-1 hover:bg-slate-100'>delete user</Link>
+                        <Link to={"all-support"} className='px-2 py-1 hover:bg-slate-100'>technical support</Link>
+                        <Link to={"inventory-client"} className='px-2 py-1 hover:bg-slate-100'>inventory</Link>
+
+                        
+
 
 
                 </nav>

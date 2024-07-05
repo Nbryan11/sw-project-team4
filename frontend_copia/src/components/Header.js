@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import Logo from './Logo'
 import { CiUser } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
+  import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
@@ -20,9 +20,14 @@ const Header = () => {
   const user = useSelector(state => state?.user?.user)
   const dispatch = useDispatch()
   const [menuDisplay, setMenuDisplay] = useState(false)
+  const searchInput = useLocation()
+  const [search, setSearch] = useState(searchInput?.search?.split("=")[1])
+  
+  console.log("searchInput", searchInput  )
 
   //usamos el context que definimos en el provider en el app.js
   const context = useContext(Context)
+  const navigate =  useNavigate()
 
   //funcion para borrar las cookies y cerrar sesion
   const handleLogout = async () => {
@@ -43,7 +48,16 @@ const Header = () => {
     }
   }
 
-  console.log("header add to cart count", context)
+  const handleSearch = (e)=>{
+    const { value } = e.target
+    setSearch(value)
+    if(value){
+      navigate(`/search?q=${value}`)
+    }else{
+      navigate(`/`)
+    }
+  }
+
   return (
 
     <header className='h-16 shadow-md border-b-2 border-slate-300' style={{ backgroundColor: '#FDFEFE' }}>
@@ -55,7 +69,8 @@ const Header = () => {
         </div>
 
         <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2 bg-white'>
-          <input type='text' placeholder='busca un producto' className='w-full outline-none' />
+          <input type='text' placeholder='busca un producto' className='w-full outline-none' onChange={handleSearch} value={search}/>
+          
           <div className='text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white'>
             <CiSearch />
           </div>

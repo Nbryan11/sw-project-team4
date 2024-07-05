@@ -22,7 +22,8 @@ const UploadProduct = ({
         productImage: [],
         description: "",
         price: "",
-        sellingPrice: ""
+        sellingPrice: "",
+        licenseIdsInput: ""
     })
     const [openFullScreenImage, setOpenFullScreenImage] = useState(false)
     const [fullScreenImage, setFullScreenImage] = useState("")
@@ -78,6 +79,7 @@ const UploadProduct = ({
                 "content-type" : "application/json"
             },
             body: JSON.stringify(data)
+
         })
         const responseData = await response.json()
 
@@ -92,7 +94,7 @@ const UploadProduct = ({
         }
     }
     return (
-        <div className='fixed w-full h-full bg-slate-200 bg-opacity-35 top-0 left-0 right-0 bottom-0 flex justify-center items-center'>
+        <div className='fixed w-full h-full bg-slate-500 bg-opacity-50 top-0 left-0 right-0 bottom-0 flex justify-center items-center'>
             <div className='bg-white p-4 rounded w-full max-w-2xl h-full max-h-[80%] overflow-hidden'>
                 <div className='flex justify-between items-center pb-3'>
                     <h2 className='font-bold text-lg'></h2>
@@ -208,6 +210,16 @@ const UploadProduct = ({
                         value={data.description}
                     >
                     </textarea>
+                    <label htmlFor='licenseIdsInput' className='mt-3'>License IDs (separated by commas):</label>
+                    <input
+                        type='text'
+                        id='licenseIdsInput'
+                        placeholder='Enter license IDs'
+                        name='licenseIdsInput'
+                        value={data.licenseIdsInput}
+                        onChange={handleOnChange}
+                        className='p-2 bg-slate-100 border rounded'
+                    />
 
                     <button className='px-3 py-2 bg-blue-600 text-white mb-10 hover:bg-blue-700'>Upload Product</button>
                 </form>

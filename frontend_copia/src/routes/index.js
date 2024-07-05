@@ -17,6 +17,16 @@ import Cart from '../pages/Cart';
 import ClientPanel from '../pages/clientPanel';
 import InformationClient from '../pages/information';
 import HistoryShopping from '../pages/historyShopping';
+import SearchProduct from '../pages/SearchProduct';
+import Reports from '../pages/Reports';
+import MantenimientoPreventivo from '../pages/MantenimientoPreventivo';
+import TecnicoPanel from '../pages/TecnicoPanel';
+import TasksTecnico from '../pages/TaskTecnico';
+import DeleteUser from '../pages/deleteUser';
+import AllSupports from '../pages/allSupports';
+import MantenimientoCorrectivo from '../pages/mantenimientoCorrectivo';
+import InventoryClient from '../pages/inventoryClient';
+import TasksTecnicoCorrectivo from '../pages/taskTecnicoCorrectivo';
 
 
 const router = createBrowserRouter([
@@ -58,6 +68,10 @@ const router = createBrowserRouter([
         element: <ProductDetails/>
       },
       {
+        path: "search",
+        element: <SearchProduct/>
+      },  
+      {
         path: "service-form",
         element: <Serviceform/>
       },
@@ -65,6 +79,18 @@ const router = createBrowserRouter([
         path: "my-profile",
         element: <ProfileClient/>
       },
+      {
+        path: "mantenimiento-preventivo",
+        element: <MantenimientoPreventivo/>
+      },
+      {
+        path: "mantenimiento-correctivo",
+        element: <MantenimientoCorrectivo/>
+      },
+
+      
+      
+      
       
       
       {
@@ -82,6 +108,10 @@ const router = createBrowserRouter([
           {
             path: "all-products",
             element: <AllProducts />
+          },
+          {
+            path: "reports",
+            element: <Reports/>
           }
         ]
       },
@@ -97,6 +127,34 @@ const router = createBrowserRouter([
             path: "history-shopping",
             element: <HistoryShopping/>
           },
+          {
+            path:"delete-user",
+            element: <DeleteUser/>
+          },
+          ,
+          {
+            path:"all-support",
+            element: <AllSupports/>
+          },
+          {
+            path: "inventory-client",
+            element: <InventoryClient/>
+          },
+        ]
+      },
+      {
+        path: "technical-panel",
+        element: <TecnicoPanel/>,
+        children: [
+          {
+            path: "tasks",
+            element: <TasksTecnico/>
+          },
+          {
+            path: "tasksCorrectivo",
+            element: <TasksTecnicoCorrectivo/>
+          }
+
         ]
       }
     ]
