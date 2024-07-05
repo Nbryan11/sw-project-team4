@@ -22,12 +22,21 @@ const getCategoryProduct = async(req,res)=> {
             success: true,
             data: productByCategory
         })
+        
     }catch(err){
-        res.json({
-            message: err.message || err,
-            error: true,
-            success: false,
-        })
+        if (err.name === 'ValidationError') {
+            res.status(400).json({
+              message: 'Error de validación',
+              error: true,
+              success: false,
+            });
+          } else {
+            res.status(500).json({
+              message: 'Error en la base de datos',
+              error: true,
+              success: false,
+            });
+          }
     }
 }
 
